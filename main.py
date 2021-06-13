@@ -140,8 +140,8 @@ def update_task_teacher():
 
 
 
-
-database = r"C:\Users\pksds\Documents\dynamichack1221.db"
+# add db link
+database = ""
 sql_create_tasks_table = """CREATE TABLE IF NOT EXISTS tasks (
                                     id integer PRIMARY KEY,
                                     Assignment text NOT NULL,
@@ -231,13 +231,13 @@ def mail():
     
 
 
-    EMAIL_ADDRESS = "dynamiccompetition123@gmail.com"
-    EMAIL_PASSWORD = "Dynamiccompetition@123"
+    EMAIL_ADDRESS = ""  #type in your email id
+    EMAIL_PASSWORD = ""  #type in password
 
     msg = EmailMessage()
     msg['Subject'] = 'This is regarding your student result'
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = 'dynamiccompetition123@gmail.com'     #type in ur mailid
+    msg['To'] = ''     #type in ur mailid
 
     msg.set_content(' ')
     r_set=conn.execute('''SELECT * from tasks''');
@@ -249,9 +249,9 @@ def mail():
     plt.bar(xaxis, yaxis, color ='maroon',width = 0.4)
     plt.xlabel('subjects')
     plt.ylabel('marks')
-    plt.savefig('C:/Users/pksds/Desktop/read.png',tranparent=True)
+    plt.savefig('',tranparent=True) #add path
     
-    with open('C:/Users/pksds/Desktop/read.png','rb') as f:
+    with open('','rb') as f: #add path
         filedata=f.read()
         filetype=imghdr.what(f.name)
         filename="analysis"
@@ -269,13 +269,13 @@ def mail():
 
 def mailspam():
 
-    EMAIL_ADDRESS = "dynamiccompetition123@gmail.com"
-    EMAIL_PASSWORD = "Dynamiccompetition@123"
+    EMAIL_ADDRESS = ""  #add email id and
+    EMAIL_PASSWORD = ""  #password
 
     msg = EmailMessage()
     msg['Subject'] = 'Reporting Teacher'
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = 'dynamiccompetition123@gmail.com'    
+    msg['To'] = ''   #email id  
 
     msg.set_content(' ')
     msg.add_alternative("""\
@@ -310,9 +310,9 @@ def spam_words():
     check_profanity(contents_of_files)
 
 def check_profanity(text_to_check):
-    with open('C:/Users/pksds/Desktop/text.txt',encoding="utf8") as f:
+    with open('',encoding="utf8") as f:  #add path of text file created
         text = f.read()
-    with open('C:/Users/pksds/Desktop/spam.txt',encoding="utf8") as f:
+    with open('',encoding="utf8") as f:  #add path of text file created
         spam = f.read()
     spam=spam.split()
     text1=text.split()
@@ -337,7 +337,7 @@ def check_profanity(text_to_check):
 
 
 def summarize():
-    with open('C:/Users/pksds/Desktop/text.txt',encoding="utf8") as f:
+    with open('',encoding="utf8") as f:  #add path
         text = f.read()
     
     
